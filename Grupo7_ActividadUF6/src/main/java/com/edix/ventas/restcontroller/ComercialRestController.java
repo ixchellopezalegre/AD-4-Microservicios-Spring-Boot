@@ -3,7 +3,6 @@ package com.edix.ventas.restcontroller;
 import com.edix.ventas.model.entitybeans.Comercial;
 import com.edix.ventas.model.entitybeans.Pedido;
 import com.edix.ventas.services.ComercialService;
-import com.edix.ventas.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +14,6 @@ public class ComercialRestController {
 
     @Autowired
     private ComercialService cServ;
-    @Autowired
-    private PedidoService pServ;
 
 
     @PostMapping("/alta")
