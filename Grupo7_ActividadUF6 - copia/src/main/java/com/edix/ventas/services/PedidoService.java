@@ -9,6 +9,4 @@ public interface PedidoService {
     List<Pedido> findAll();
 	int hacerPedido(Pedido pedido);
 	List<Pedido> buscarPorCliente(int idCliente);
-	List<Pedido> buscarPorFechaEntre(String fechaInicio, String fechaFinal);
-
 }

@@ -5,9 +5,6 @@ import com.edix.ventas.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -40,13 +37,4 @@ public class PedidoServiceImpl implements PedidoService {
 	public List<Pedido> buscarPorCliente(int idCliente) {
 		return pRepo.findByCliente_IdCliente(idCliente);
 	}
-
-	@Override
-	public List<Pedido> buscarPorFechaEntre(String fechaInicio, String fechaFinal) {
-		DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDate out = LocalDate.parse(fechaInicio);
-		LocalDate out2 = LocalDate.parse(fechaFinal);
-		return pRepo.findPedidoByFechaBetween(out, out2);
-	}
-	
 }

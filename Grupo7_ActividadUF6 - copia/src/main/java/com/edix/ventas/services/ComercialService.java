@@ -10,9 +10,14 @@ public interface ComercialService {
 
     Comercial findById(int idComercial);
     int insertarUno(Comercial comercial);
+
     int modificarUno(Comercial comercial);
+
     int eliminarUno(int idComercial);
+
     List<Comercial> buscarPorCliente(int idCliente);
+
     List<Comercial> buscarPorPedidos();
+
     List<Pedido> verPedidos(int idComercial);
 }

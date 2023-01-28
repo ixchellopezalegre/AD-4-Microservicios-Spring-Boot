@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -39,11 +38,5 @@ public class PedidoRestController {
     @GetMapping("/porCliente/{id}")
     public List<Pedido> verPedidosCliente(@PathVariable("id") int idCliente) {
     return pServ.buscarPorCliente(idCliente);
-    }
-    
-    @GetMapping("/porFechaEntre/{fechaInicio}/{fechaFin}")
-    public List<Pedido> verPedidosCliente(@PathVariable("fechaInicio") String fechaInicio,
-    		@PathVariable("fechaFin") String fechaFin){
-    return pServ.buscarPorFechaEntre(fechaInicio, fechaFin);
     }
 }
