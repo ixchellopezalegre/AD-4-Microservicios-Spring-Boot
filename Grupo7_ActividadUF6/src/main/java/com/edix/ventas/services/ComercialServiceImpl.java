@@ -15,11 +15,21 @@ public class ComercialServiceImpl implements ComercialService{
     private ComercialRepository cRepo;
 
     @Override
+    /**
+     * Busca un Comercial en la base de datos por su ID
+     * @param idComercial ID del Comercial a buscar
+     * @return Comercial si lo encuentra, null si no lo encuentra
+     * */
     public Comercial findById(int idComercial) {
         return cRepo.findById(idComercial).orElse(null);
     }
 
     @Override
+    /**
+     * Inserta un Comercial en la base de datos
+     * @param comercial Comercial a insertar
+     * @return 1 si se inserta correctamente, 0 si no se inserta
+     */
     public int insertarUno(Comercial comercial) {
         int filas = 0;
         try {
@@ -30,6 +40,11 @@ public class ComercialServiceImpl implements ComercialService{
     }
 
     @Override
+    /**
+     * Modifica un Comercial en la base de datos
+     * @param comercial Comercial a modificar
+     * @return 1 si se modifica correctamente, 0 si no se modifica
+     */
     public int modificarUno(Comercial comercial) {
         int filas = 0;
         try {
@@ -40,6 +55,11 @@ public class ComercialServiceImpl implements ComercialService{
     }
 
     @Override
+    /**
+     * Elimina un Comercial en la base de datos
+     * @param idComercial ID del Comercial a eliminar
+     * @return 1 si se elimina correctamente, 0 si no se elimina
+     */
     public int eliminarUno(int idComercial) {
         int filas = 0;
         try {
@@ -50,23 +70,33 @@ public class ComercialServiceImpl implements ComercialService{
     }
 
     @Override
+    /**
+     * Busca los Comerciales que han atendido pedidos del cliente 
+     * que coincida con ese id.
+     * @param idCliente ID del Cliente
+     * @return los Comerciales si los encuentra, null si no los encuentra
+     */
     public List<Comercial> buscarPorCliente(int idCliente) {
         return cRepo.porCliente(idCliente);
     }
 
     @Override
+    /**
+     * Busca los Comerciales que han atendido pedidos del cliente que coincida con ese id.
+     * @param idCliente ID del Cliente
+     * @return los Comerciales si los encuentra, null si no los encuentra
+     */
     public List<Comercial> buscarPorPedidos() {
         return cRepo.conPedidos();
     }
 
     @Override
+    /**
+     * Busca los Pedidos que gestionados por el Comercial que coincida con ese id.
+     * @param idComercial ID del Comercial
+     * @return los Pedidos si los encuentra, null si no los encuentra
+     * */
     public List<Pedido> verPedidos(int idComercial) {
-
-        System.out.println("-----                   -------------");
-        System.out.println(cRepo.verPedidos(idComercial));
-
-        System.out.println("-----                   -------------");
-
         return cRepo.verPedidos(idComercial);
     }
 

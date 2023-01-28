@@ -1,8 +1,6 @@
 package com.edix.ventas.restcontroller;
 
-import com.edix.ventas.model.entitybeans.Comercial;
 import com.edix.ventas.model.entitybeans.Pedido;
-import com.edix.ventas.services.ComercialService;
 import com.edix.ventas.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
