@@ -17,4 +17,6 @@ public interface ComercialRepository extends JpaRepository<Comercial, Integer> {
    @Query("select p from Pedido p where p.comercial.idComercial = ?1")
     List<Pedido> verPedidos(int idComercial);
 
+   List<Comercial> findByComisionGreaterThan(double comision);
+
 }
